@@ -1,0 +1,66 @@
+.order_box {
+	background: #fff;
+	margin-bottom: 10px;
+}
+.order_header {
+	padding: 1rem;
+	border-bottom: 1px dashed #ccc;
+}
+.order_header h2 {
+	color: #333;
+	font-weight: normal;
+	font-size: 1.3rem;
+}
+.order_header p {
+	color: #878787;
+	font-weight: normal;
+	font-size: 1rem;
+}
+.order_box ul li {
+  	position: relative;
+    padding: 1rem;
+    background: #fff;
+    min-height: 120px;
+    padding-left: 120px;
+}
+.order_box ul li a {
+	color: #333;
+}
+.order_box ul li .pic {
+	display: inline-block;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 1rem;
+    top: 0.7rem;
+}
+.order_box ul li .pic img {
+	width: 100%;
+}
+.order_box ul li h2 {
+	color: #454545;
+	font-size: 1rem;
+	font-weight: normal;
+	line-height: 20px;
+}
+.order_box ul li h3 {
+	font-weight: normal;
+	line-height: 20px;
+	font-size: 1rem;
+	color: #878787;
+
+}
+.order_box ul li h3  span {
+	padding-left: 10px;
+}
+.order_box ul li h4{
+	font-weight: normal;
+	line-height: 18px;
+	font-size: 0.9rem;
+	color: #bfbfbf;
+}
+.order_box ul li b {
+	color: #f44623;
+	font-size: 1.1rem;
+	display: block;
+}

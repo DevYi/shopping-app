@@ -1,0 +1,57 @@
+input {
+	border: 1px solid #dadada;
+	width: 100%;
+	line-height: 18px;
+	border-radius: 5px;
+}
+select {
+	width: 100%;
+  	font: inherit;
+	border: 1px solid #dadada;
+	border-radius: 5px;
+	font-size: 0.8rem;
+}
+
+.uk-form {
+	background: #fff;
+	width: 100%;
+}
+.uk-panel {
+	padding: 0.5rem;
+	margin: 1rem 0;
+} 
+.uk-panel p {
+	line-height: 20px;
+	padding-bottom: 1rem;
+}
+.uk-panel p .uk-width-1-1 {
+	padding: 0.3rem 1rem ;
+}
+.uk-panel p textarea {
+	width: 100%;
+	border: 1px solid #dadada;
+	border-radius: 5px;
+	padding: 8px 20px 10px 10px;
+	font-size: 0.8rem;
+}
+.pay_menu {
+	width: 100%;
+	padding: 1rem;
+	text-align: center;
+}
+.pay_menu a {
+	margin: 5px 0;
+	width: 100%;
+	display: inline-block;
+	border-radius: 4px;
+	color: #fff;
+	width: 100%;
+	font-size: 1rem;
+	line-height: 28px;
+}
+.uk-button-danger {
+	background: #da314a;
+}
+.uk-button-primary {
+	background: #35b3ee;
+}

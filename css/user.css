@@ -1,0 +1,139 @@
+body {
+	background: #f0f0f0;
+}
+
+/**
+ * 头部
+ */
+.vip-header {
+	width: 100%;
+	height: 150px;
+	background: url(../images/vip_bg.jpg) no-repeat;
+	background-size: 150%;
+	overflow: hidden;
+	position: relative;
+}
+.vip-header dl {
+	padding: 14px 6% 0 6%;
+}
+.vip-header dt {
+	width: 65px;
+	height: 65px;
+	float: left;
+	border-radius: 100%;
+	border: 4px solid rgba(255,255,255,.4);
+	overflow: hidden;
+
+}
+.vip-header dt>img {
+	width: 100%;
+	height: 100%;
+}
+.vip-header dd {
+	float: left;
+	padding: 7px 0 0 10px;
+}
+.vip-header dd h4 {
+	font-size: 16px;
+	color: #fff;
+	font-weight: normal;
+}
+.vip-header dd h4>span {
+	font-size: 13px;
+	border-radius: 5px;
+	background-color: #e53460; 
+	padding: 2px 5px;
+	margin-left: 10px;
+}
+.vip-header dd h3{
+	font-size: 14px;
+	color: #fff;
+	margin-top: 10px;
+}
+.vip-header dd h3>span {
+	color: #ffc601;
+}
+.vip-header ul {
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+}
+.vip-header ul li {
+	float: left;
+	width: 33%;
+	background: rgba(60,60,60,.3);
+	text-align: center;
+	margin-right: .33%;
+	padding: 5px 0;
+}
+.vip-header ul li a {
+	color: #fff;
+}
+.vip-header ul li a span {
+	font-size: 16px;
+}
+/**
+ * 账户
+ */
+.vip-count {
+	margin-top: 10px;
+	background: #fff;
+	border: 1px solid #dadada;
+	border-width: 1px 0;
+	overflow: hidden;
+} 
+.vip-count-title {
+	line-height: 44px;
+	font-size: 16px;
+	padding: 0 8px;
+	border-bottom: 1px solid #dadada;
+	border-width: 0 0 1px 0;
+}
+
+.vip-count-title a {
+	float: right;
+	color: #a8a9ab;
+	font-size: 15px;
+}
+
+.vip-count ul li {
+	float: left;
+	padding: 10px 0;
+	width: 25%;
+	font-size: 14px;
+	color: #686868;
+	text-align: center;
+	background: #fff;
+}
+.vip-count ul li i{
+	font-size: 18px;
+	line-height: 26px;
+}
+/**
+ * vip-list
+ */
+.vip-list {
+	margin-top: 10px;
+	border: 1px solid #dadada;
+	border-width: 1px 0;
+	/*background: #fff;*/
+}
+.vip-list li {
+	background: #fff;
+	width: 100%;
+	line-height: 30px;
+	padding: 10px 0;
+	text-align: center;
+	overflow: hidden;
+
+}
+.vip-list li a{
+	width: 49.8%;
+	display: block;
+	float: left;
+}
+.vip-list li a b{
+	width: 20px;
+	height: 20px;
+	background-size: contain;
+}

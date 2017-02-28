@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0">
+    <title>购物车</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/cart.css">
+    <script type="text/javascript" src="script/zepto.min.js"></script>
+    <script type="text/javascript" src="script/cart.js"></script>
+</head>
+
+<body class="grayBy">
+<!--固定头部-->
+    <header class="jd_topBar">
+        <a href="javascript:history.back();" class="icon-back"></a>
+        <h2>购物车</h2>
+        <a href="#" class="icon-menu"></a>
+    </header>
+<!--固定头部/-->
+        <div class="null_shopping" style="display:none" >
+            <br>
+            <br>
+            <img src="images/shopcar.png" alt="购物车" width="50px">
+            <h4>您还没有宝贝，赶快去逛逛吧！</h4>
+            <input type="button" value="马上去逛逛" class="null_btn" onclick="window.location.href='index.html'">
+        </div>
+        <div id="cartTable">
+            <div class="all-checked border-bottom">
+                <label> <input type="checkbox" />全选</label> 
+                <a href="javascript:;" class="right deleteBox">清空</a>
+            </div>
+            <ul>
+                <li class="border-bottom">
+                    <div class="check-box">
+                        <input type="checkbox" name="basketid">
+                    </div>
+                    <div class="m-pic">
+                        <img src="images/mobile.jpg" alt="">
+                    </div>
+                    <div class="content">
+                        <h2>红米note3 标准双4G版 银色行货 16G</h2>
+                        <p>￥
+                            <span data-bind="999" class="subtotal m-price">999</span>
+                        </p>
+                        <span>数量：</span>
+                        <div class="reduce"></div>
+                        <input type="text"  class="itnums" name="qty_item_2"  value="1" />
+                        <div class="add"></div>
+                    </div>
+                    <div class="baozhang"> 
+                        <span class="no_sel"><i></i>延长保修<strong>49元/年</strong><em>购买服务</em></span> 
+                        <span class="no_sel"><i></i>意外保服务<strong>99元/年</strong><em>购买服务</em></span> 
+                    </div>
+                </li>
+                <li class="border-bottom">
+                    <div class="check-box">
+                        <input type="checkbox" name="basketid">
+                    </div>
+                    <div class="m-pic">
+                        <img src="images/mobile.jpg" alt="">
+                    </div>
+                    <div class="content">
+                        <h2>红米note3 标准双4G版 银色行货 16G</h2>
+                        <p>￥
+                            <span data-bind="1099" class="m-price">1099</span>
+                        </p>
+                        <span>数量：</span>
+                        <div class="reduce"></div>
+                        <input type="text"  class="itnums" name="qty_item_2"  value="1" />
+                        <div class="add"></div>
+                    </div>
+                    <div class="baozhang"> 
+                        <span class="no_sel"><i></i>延长保修<strong>49元/年</strong><em>购买服务</em></span> 
+                        <span class="no_sel"><i></i>意外保服务<strong>99元/年</strong><em>购买服务</em></span> 
+                    </div>
+                </li>
+                </li>
+                <li class="border-bottom">
+                    <div class="check-box">
+                        <input type="checkbox" name="basketid">
+                    </div>
+                    <div class="m-pic">
+                        <img src="images/mobile.jpg" alt="">
+                    </div>
+                    <div class="content">
+                        <h2>红米note3 标准双4G版 银色行货 16G</h2>
+                        <p>￥
+                            <span data-bind="1299" class="m-price">1299</span>
+                        </p>
+                        <span>数量：</span>
+                        <div class="reduce"></div>
+                        <input type="text"  class="itnums" name="qty_item_2"  value="1" />
+                        <div class="add"></div>
+                    </div>
+                    <div class="baozhang"> 
+                        <span class="no_sel"><i></i>延长保修<strong>49元/年</strong><em>购买服务</em></span> 
+                        <span class="no_sel"><i></i>意外保服务<strong>99元/年</strong><em>购买服务</em></span> 
+                    </div>
+                </li>
+            </ul>
+        <div class="empty"></div>
+        <div class="cart-status">
+            <div class="cart_btn">
+                <p style="margin-top: 10px;">您选择了<span id="qtyCount"></span>件商品，总计：<b class="red1" id="priceTotal">￥333</b> 元</p>
+                <a href="index.html" class="btn1" style="background: #45A1DE;">继续购物</a>
+                <a href="login.html" class="btn1">去结算</a>
+            </div>
+        </div>
+    </div>
+<!--弹出框-->
+    <div class="jd_win" style="display: none">
+        <div class="jd_win_box">
+            <div class="jd_win_box_con">确认要清空购物车吗？</div>
+            <div class="jd_win_box_btn clearfix">
+                <a href="" class="cancel">取消</a>
+                <a href="" class="submit">确认</a>
+            </div>
+        </div>
+    </div>
+<script type="text/javascript">
+
+    var cartTable = $("#cartTable");
+    $(cartTable).find("ul li").each(function() {
+        var input = $(this).find("input[type='text']");
+        
+        //为数量输入框添加事件，计算金额小计，并更新总计
+        $(input).keyup(function() {
+            var val = parseInt($(this).val());
+            if (isNaN(val) || (val < 1)) { $(this).val("1"); }
+            // getSubTotal($(this).parent().parent()); //tr element
+            getTotal();
+        });
+
+        //为数量调整按钮、删除添加单击事件，计算金额小计，并更新总计
+        $(this).click(function() {
+            var val = parseInt($(input).val());
+            if (isNaN(val) || (val < 1)) { val = 1; }
+
+            if ($(window.event.srcElement).hasClass("reduce")) {
+                if (val > 1) val--;
+                input.val(val);
+                getSubTotal(this);
+            }
+            else if ($(window.event.srcElement).hasClass("add")) {
+                if (val < 9999) val++;
+                input.val(val);
+                getSubTotal(this);
+            }
+
+            getTotal();
+        });
+    });
+
+    function getSubTotal(row) {
+        var price = parseFloat($(row).find(".m-price").data("bind"));
+        var qty = parseInt($(row).find("input[type='text']").val());
+        var result = price * qty;
+        $(row).find(".m-price").text(result);
+    };
+
+    function getTotal() {
+        var qtyTotal = 0;
+        var priceTotal = 0;
+        $(cartTable).find("ul li").each(function() {
+            getSubTotal(this);
+            if ($(this).find("input[type='checkbox']").prop("checked") == true) {
+                qtyTotal += parseInt($(this).find("input[type='text']").val());
+                priceTotal += parseFloat($(this).find(".m-price").text());
+            }
+        });
+        $("#qtyCount").text(qtyTotal);
+        $("#priceTotal").text(priceTotal)
+    };
+
+    getTotal();
+
+    $(".all-checked input").change(function () {
+            if ($(this).prop("checked") == true) {
+                $("ul li input[type='checkbox'],.all-checked input").prop("checked", true);
+                getTotal();
+            } else {
+                $("ul li input[type='checkbox'],.all-checked input").prop("checked", false);
+            }
+    });
+    $("input[name='basketid']").change(function () {
+        if ($(this).prop("checked") == false) {
+            $(".all-checked input").prop("checked", false);
+        }
+    getTotal();
+
+    });
+
+    $(".submit").click(function(){
+        $("#cartTable").hide();
+        $(".null_shopping").show();
+    });
+</script>
+       
+</body>
+</html>

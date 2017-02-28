@@ -1,0 +1,45 @@
+
+ul li {
+  	position: relative;
+    padding: 1rem 0;
+    background: #fff;
+    min-height: 120px;
+    padding-left: 120px;
+}
+ul li .pic {
+	display: inline-block;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 1rem;
+    top: 0.7rem;
+} 
+ul li .pic img {
+	width: 100%;
+}
+ul li a h2 {
+	margin: 0;
+    padding: 0;
+    padding-top: 5px;
+    font-weight: normal;
+    color: #454545;
+    font-size: 1.1rem;
+    line-height: 22px;
+}
+ul li a b {
+	color: #f20c11;
+    position: absolute;
+    left: 122px;
+    bottom: 1rem;
+}
+.del_fav {
+	display: inline-block;
+	position: absolute;
+	bottom: 1rem;
+	right: 1rem;
+	background: #35b3ee;
+	color: #fff;
+	padding: 5px;
+	font-size: 0.8rem;
+	border-radius: 4px;
+}

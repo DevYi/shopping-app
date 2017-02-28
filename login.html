@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0">
+	<title>我的</title>
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/login.css">
+	<style type="text/css">  
+        .code   
+        {   
+            font-family:Arial;   
+            font-style:italic; 
+            font-size: 14px;  
+            color:red;   
+            border:0;   
+            padding:2% 3%;   
+            letter-spacing:3px;   
+            font-weight:700; 
+        }   
+        .unchanged   
+        {   
+            border:0;   
+        }   
+    </style>  
+</head>
+<body onload="createCode()">
+<!--头部开始-->
+	<header class="jd_topBar">
+    <a href="javascript:history.back();" class="icon-back"></a>
+		<p>登录</p>
+	</header>
+
+	<div class="page">
+	    	<div class="login-out">
+	    		<s></s>
+	    		<input type="text" placeholder="请输入手机号" class="login-text login-name" id="login_userName">
+            	<i class="warn" style="display:none;"></i>
+	    	</div>
+	    	<div class="login-psword">
+	    		<s></s>
+	    		<input type="password" placeholder="请输入密码" class="login-text login-pass" id="login_Password">
+            	<i class="warn" style="display:none;"></i>
+	    	</div>
+	    	<div class="login-yzm">
+		    	<input  type="text"   id="validCode" class="yzm1" placeholder="请输入验证码">
+          <i class="warn" style="display:none;" id="warn"></i>
+	    		<input  type="text" onClick="createCode()" readonly="readonly" id="checkCode" class="unchanged" style="width: 100px;height: 40px;background:#eee;border:1px solid #ddd;border-radius:3px;">
+	    	</div>
+			<input type="button" class="login-btn" value="登 录"  onclick="javascript:window.location.href='user.html'">
+			<input type="button" class="login-cfm" value="免费注册">
+			<a href="" class="findpwd">找回密码</a>
+			<div class="login-way">
+				<div class="way1">使用第三方账号登录</div>
+				<a class="way2" href="user.html">QQ登录</a>
+			</div>
+	</div>
+<!--头部结束-->
+<!--验证码-->
+<script type="text/javascript">  
+       
+     var code ; //在全局 定义验证码   
+     function createCode()   
+     {    
+       code = "";   
+       var codeLength = 6;//验证码的长度   
+       var checkCode = document.getElementById("checkCode");   
+       var selectChar = new Array(0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z');//所有候选组成验证码的字符，当然也可以用中文的      
+       for(var i=0;i<codeLength;i++)   
+       {   
+        var charIndex = Math.floor(Math.random()*36);   
+        code +=selectChar[charIndex];   
+       }    
+       if(checkCode)   
+       {   
+         checkCode.className="code";   
+         checkCode.value = code;
+         checkCode.blur();   
+       }        
+     }     
+     function validate()   {   
+       var inputCode = document.getElementById("validCode").value; 
+       var warn = document.getElementById("warn");  
+       if(inputCode.length <=0)   
+       {   
+           warn.style.display = "inline-block"; 
+       }   
+       else if(inputCode.toUpperCase() != code )   
+       {   
+           warn.style.display = "inline-block"; 
+          // alert("验证码输入错误！");   
+          createCode();//刷新验证码   
+       }   
+       else   
+       {   
+         warn.style.display = "none";   
+       }   
+ }  
+</script>
+<script src="script/libs/require.js" data-main="script/views/enterjs/mainconfig.js"></script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+.logistics_header {
+	background: #f20c11;
+	color: #fff;
+	text-align: center;
+	padding: 1rem;
+	font-size: 1.1rem;
+}
+.order_logistics {
+    position: relative;
+    padding: 1rem;
+    background: #fff;
+    min-height: 120px;
+    padding-left: 120px;
+}
+.order_logistics .pic {
+	display: inline-block;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+}
+.order_logistics .pic img {
+	width: 100%;
+}
+.order_logistics .pic span{
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	text-align: center;	
+	background: rgba(0, 0, 0, 0.51);
+	color: #fff;
+	padding: 5px;
+	font-size: 1rem;
+}
+.order_logistics p {
+	color: #454545;
+	font-size: 1.1rem;
+}
+.order_logistics p span,.order_logistics p a{
+	color: #f2a40c;
+	font-size: 1.1rem;
+}
+.order_logistics p b {
+	font-weight: normal;
+	color: #9a9a9a;
+}
+.delivery_box {
+	background: #fff;
+	margin-top: 1rem;
+	padding: 2rem 1rem 0 2rem;
+}
+.delivery_box ul {
+	border-left: 2px solid #ccc;
+	padding-left: 1.5rem;
+}
+.delivery_box ul li {
+	border-bottom: 1px solid #e6e6e6;
+	padding-bottom: 1rem;
+	margin-bottom: .5rem;
+	position: relative;
+}
+.delivery_box ul li:last-child {
+	border: none;
+}
+.delivery_box ul li.start .line_icon {
+	display: block;
+	width: 16px;
+	height: 16px;
+	background: #f2a40c;
+	border: 3px solid #f8d185;
+	border-radius: 100%;
+	position: absolute;
+	top: 0rem;
+	left: -2.05rem;
+}
+.delivery_box ul li.start p {
+	color: #f2a40c;
+}
+.delivery_box ul li .line_icon {
+	display: block;
+	width: 12px;
+	height: 12px;
+	background: #ccc;
+	border-radius: 100%;
+	position: absolute;
+	top: 0.2rem;
+	left: -1.95rem;
+}
+.delivery_box ul li p {
+	font-size: 1rem;
+	color: #878787;
+	line-height: 20px;
+}
+.delivery_box ul li .time {
+	font-size: 0.8rem;
+	padding-top: 5px;
+	color: #878787;
+}
